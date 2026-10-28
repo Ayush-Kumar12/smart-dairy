@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #263238;
+}
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #163c35;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 25px 18px;
+}
+.sidebar h2 {
+    margin-bottom: 35px;
+    font-size: 23px;
+}
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sidebar nav a {
+    color: #e8f5e9;
+    text-decoration: none;
+    padding: 13px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.sidebar nav a:hover {
+    background: #2c6658;
+    transform: translateX(4px);
+}
+/* Main Content */
+.main-content {
+    margin-left: 250px;
+    padding: 30px;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+header p {
+    color: #718096;
+}
+.profile {
+    background: #d9eee5;
+    color: #163c35;
+    padding: 12px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+/* Dashboard Cards */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+.card {
+    background: white;
+    padding: 24px 20px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+    border-bottom: 4px solid #47a886;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+}
+.card h3 {
+    color: #718096;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+.card p {
+    color: #163c35;
+    font-size: 25px;
+    font-weight: bold;
+}
+/* Panels */
+.panel {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+}
+.panel h2 {
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+/* Form */
+#milkForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+}
+#milkForm label {
+    font-size: 14px;
+    font-weight: bold;
+}
+#milkForm input,
+#milkForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d8e0e8;
+    border-radius: 7px;
+    outline: none;
+    background: white;
+}
+#milkForm input:focus,
+#milkForm select:focus {
+    border-color: #47a886;
+    box-shadow: 0 0 0 3px rgba(71, 168, 134, 0.12);
+}
+#milkForm button {
+    grid-column: 1 / -1;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background: #237a5b;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#milkForm button:hover {
+    background: #165c43;
+}
+/* Table */
+.table-container {
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #e7edf2;
+    text-align: left;
+}
+th {
+    background: #edf6f1;
+    color: #163c35;
+    font-size: 14px;
+}
+td {
+    font-size: 14px;
+}
+.delete-btn {
+    background: #ffe8e8;
+    color: #c62828;
+    border: none;
+    padding: 8px 11px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.delete-btn:hover {
+    background: #ffd4d4;
+}
+/* Chart */
+#milkChart {
+    max-height: 300px;
+}
+/* Responsive Design */
+@media (max-width: 1100px) {
+    .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 700px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .sidebar h2 {
+        margin-bottom: 15px;
+    }
+    .sidebar nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .sidebar nav a {
+        padding: 9px;
+        font-size: 13px;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 18px;
+    }
+    header h1 {
+        font-size: 24px;
+    }
+    .stats {
+        grid-template-columns: 1fr;
+    }
+    #milkForm {
+        grid-template-columns: 1fr;
+    }
+    #milkForm button {
+        grid-column: auto;
+    }
+    .panel {
+        padding: 18px;
+    }
+}
